@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GameVault</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Background Video -->
+<video autoplay muted loop playsinline class="bg-video">
+    <source src="C:\Users\kalya\Downloads\videoplayback.mp4" type="video/mp4">
+</video>
+<div class="video-overlay"></div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">
+        <div class="logo-core"></div>
+        <span class="logo-text">GameVault</span>
+    </div>
+    <button id="openModalBtn">+ Add Game</button>
+</header>
+
+<!-- STATS -->
+<section class="stats">
+    <div class="stat-card">
+        <h2 id="totalGames">0</h2>
+        <p>Total Games</p>
+    </div>
+    <div class="stat-card">
+        <h2 id="completedGames">0</h2>
+        <p>Completed</p>
+    </div>
+    <div class="stat-card">
+        <h2 id="totalHours">0</h2>
+        <p>Hours Played</p>
+    </div>
+    <div class="stat-card">
+        <h2 id="avgRating">0</h2>
+        <p>Avg Rating</p>
+    </div>
+</section>
+
+<!-- FILTERS -->
+<section class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="Playing">Playing</button>
+    <button class="filter-btn" data-filter="Completed">Completed</button>
+    <button class="filter-btn" data-filter="Backlog">Backlog</button>
+    <button class="filter-btn" data-filter="Wishlist">Wishlist</button>
+</section>
+
+<!-- GAMES -->
+<section id="gamesGrid" class="games-grid"></section>
+<p id="emptyState" class="empty">No games found 🎮</p>
+
+<!-- MODAL -->
+<div id="addGameModal" class="modal">
+    <div class="modal-content">
+        <button id="closeModalBtn">✖</button>
+        <h2>Add Game</h2>
+
+        <form id="addGameForm">
+            <input type="text" name="title" placeholder="Game title" required>
+
+            <select name="genre" required>
+                <option value="">Genre</option>
+                <option>Action</option>
+                <option>RPG</option>
+                <option>Adventure</option>
+                <option>Simulation</option>
+            </select>
+
+            <select name="platform" required>
+                <option value="">Platform</option>
+                <option>PC</option>
+                <option>Console</option>
+                <option>Mobile</option>
+            </select>
+
+            <select name="status" required>
+                <option value="">Status</option>
+                <option>Playing</option>
+                <option>Completed</option>
+                <option>Backlog</option>
+                <option>Wishlist</option>
+            </select>
+
+            <input type="number" name="hours" placeholder="Hours played" min="0">
+            <input type="number" name="rating" placeholder="Rating (0–5)" min="0" max="5">
+
+            <button type="submit">Add to Vault</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
